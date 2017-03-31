@@ -5,6 +5,7 @@
   roles:
   - eduroam-provision
 
+<<<<<<< HEAD
 
 
 - name: Create the eduroam-hosts group
@@ -15,3 +16,13 @@
 
 
 `
+=======
+- name: Create the eduroam-hosts group
+  hosts: eduroam-host
+  connection: docker
+  pre_tasks:
+    - setup:
+        filter: "*hostname*"
+  roles:
+  - eduroam-configure
+>>>>>>> 44112c5b5f926bac8a97433270f6898988e91553
