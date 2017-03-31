@@ -1,0 +1,12 @@
+---
+- name: Provision the infrastructure
+  hosts: localhost
+  connection: local
+  roles:
+  - eduroam-provision
+
+- name: Create the eduroam-hosts group
+  hosts: eduroam-host
+  connection: docker
+  roles:
+  - eduroam-configure

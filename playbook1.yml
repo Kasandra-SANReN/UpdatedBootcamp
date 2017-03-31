@@ -1,0 +1,7 @@
+---
+- name: Lesson 1
+  hosts: all
+  connection: local
+  roles:
+  - bootcamp1
+  

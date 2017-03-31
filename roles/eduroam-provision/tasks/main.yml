@@ -1,0 +1,20 @@
+---
+# tasks file for roles/eduroam-provision
+- name: Create the container
+  docker_container:
+    name: eduroam-host
+    hostname: eduroam-host
+    image: "{{ eduroam_image }}"
+    command: sleep infinity
+    detach: true
+  register: container
+
+- name: Debug
+  debug:
+    var: container
+
+- name: Debug the groups
+  debug:
+    var: "{{ item }}"
+  with_items:
+    - group_names
